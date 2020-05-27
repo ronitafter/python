@@ -1,0 +1,143 @@
+# # Test_Lesson2
+# # Question_9
+# def max2(a, b):
+#     if a > b:
+#         return a
+#     return b
+#
+#
+# def max3(a, b, c):
+#     return max2(a, max2(b, c))
+#
+#
+# # Implement using conditionals (if/else) only
+# def max5_v1(a_1, a_2, a_3, a_4, a_5):
+#     if a_1 > a_2:
+#         return a_1
+#     if a_2 > a_3:
+#         return a_2
+#     if a_3 > a_4:
+#         return a_3
+#     if a_4 >a_5:
+#         return a_4
+#     else:
+#         return a_5
+#
+#
+#
+# # Implement using max2 without conditionals (no if/else)
+# def max5_v2(a_1, a_2, a_3, a_4, a_5):
+#     x = max2(a_1, a_2)
+#     y = max2(a_3, a_4)
+#     max_xy = max2(x, y)
+#     max_all = max2(max_xy, a_5)
+#     return max_all
+#
+#
+# # Implement using max2 and max3 without conditionals (no if/else)
+# def max5_v3(a_1, a_2, a_3, a_4, a_5):
+#         max_a1a2 = max2(a_1, a_2)
+#         max_a3a4 = max2(a_3, a_4)
+#         max_all = max3(max_a1a2, max_a3a4, a_5)
+#         return max_all
+#
+#
+#
+# ### TESTS ###
+#
+# print("********************")
+# print("Starting the test:")
+#
+# print("********************")
+# print("Checking maximum in 1, 2, 3, 4, 5 using max5_v1")
+# ans = max5_v1(1, 2, 3, 4, 5)
+# if ans == 5:
+#     print("CORRECT: Very good, max5_v1 returned 5")
+# else:
+#     print("WRONG: the maximal number is 5 but max5_v1 returned", ans)
+#
+# print("********************")
+# print("Checking maximum in 1, 2, 3, 4, 5 using max5_v2")
+# ans = max5_v2(1, 2, 3, 4, 5)
+# if ans == 5:
+#     print("CORRECT: Very good, max5_v2 returned 5")
+# else:
+#     print("WRONG: the maximal number is 5 but max5_v2 returned", ans)
+#
+# print("********************")
+# print("Checking maximum in 1, 2, 3, 4, 5 using max5_v3")
+# ans = max5_v3(1, 2, 3, 4, 5)
+# if ans == 5:
+#     print("CORRECT: Very good, max5_v3 returned 5")
+# else:
+#     print("WRONG: the maximal number is 5 but max5_v3 returned", ans)
+#
+# ### EXTRA TESTS ###
+#
+# ### DO NOT MODIFY, THIS PART OF THE CODE CHECKS THAT ###
+# ### YOU HAVE CALLED max2 AND max3 ACCORDING TO INSTRUCTIONS ###
+#
+# print("********************")
+# print("\n\nNow checking your implementation:")
+#
+# import inspect
+# import ast
+#
+#
+# def test_no_max2_and_no_max3(f):
+#     call_names = [c.func.id for c in ast.walk(ast.parse(inspect.getsource(f)))
+#                   if hasattr(c, 'func') and hasattr(c.func, 'id') and isinstance(c, ast.Call)]
+#     return not ("max2" in call_names or "max3" in call_names)
+#
+#
+# def test_max2_and_no_max3(f):
+#     call_names = [c.func.id for c in ast.walk(ast.parse(inspect.getsource(f)))
+#                   if hasattr(c, 'func') and hasattr(c.func, 'id') and isinstance(c, ast.Call)]
+#     return ("max2" in call_names and not "max3" in call_names)
+#
+#
+# def test_max2_and_max3(f):
+#     call_names = [c.func.id for c in ast.walk(ast.parse(inspect.getsource(f)))
+#                   if hasattr(c, 'func') and hasattr(c.func, 'id') and isinstance(c, ast.Call)]
+#     return ("max2" in call_names and "max3" in call_names)
+#
+#
+# print("********************")
+# print("Checking that max5_v1 does not call max2 or max3")
+# if test_no_max2_and_no_max3(max5_v1):
+#     print("CORRECT: Very good, max5_v1 does not call max2 or max3")
+# else:
+#     print("WRONG: max5_v1 calls max2 or calls max3")
+#
+# print("********************")
+# print("Checking that max5_v2 calls max2 and does not call max3")
+# if test_max2_and_no_max3(max5_v2):
+#     print("CORRECT: Very good, max5_v2 calls max2 and does not call max3")
+# else:
+#     print("WRONG: max5_v2 does not call max2 or calls max3")
+#
+# print("********************")
+# print("Checking that max5_v3 calls max2 and max3")
+# if test_max2_and_max3(max5_v3):
+#     print("CORRECT: Very good, max5_v3 calls max2 and max3")
+# else:
+#     print("WRONG: max5_v3 does not call max2 or does not call max3")
+#
+# print("********************")
+# print("Tests concluded, add more tests of your own below!")
+# print("********************")
+#
+#
+#
+
+
+def final_grade(exam, hw):
+    # delete pass and fill in your code below
+    if exam >= 50 and hw <= 25:
+        return exam*0.50 + hw*0.25
+    else:
+        return exam*0.10
+
+
+print(final_grade(90,90))
+print(round(9.0))
